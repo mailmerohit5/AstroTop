@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+		<ion-menu-button auto-hide="false" style="color: #fff;"></ion-menu-button>
+		<!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title style="color: #fff;">Add Money</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-chip color="dark" (click)='goToPage("addmoney")'>
+        <ion-icon name="wallet" style="color: #fff;"></ion-icon>
+        <ion-label style="color: #fff;">2200 Rs</ion-label>
+      </ion-chip>
+      <ion-icon name="notifications-sharp" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('notification')"></ion-icon>
+      <ion-icon name="ellipsis-vertical-outline" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('home')"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg_color" fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Amount"></ion-input>
+        <h3 slot="end" (click)="promocode()">Have Promocode?</h3>
+      </ion-item>
+      <ion-button size="large" shape="block" class="btn">Add Money</ion-button>
+      <h2 class="ion-text-center">100 Rs</h2>
+    </ion-list>
+  </div>
+	<ion-card>
+		<div class="card_bg center_img">
+			<img src="assets/images/bg-orange.jpg" class="crop_img">
+		</div>
+		<h2>Offers On Wallet</h2>
+		<ion-list lines="none">
+			<ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+			</ion-item>
+			<ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+      </ion-item>
+      <ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+      </ion-item>
+      <ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+      </ion-item>
+      <ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+      </ion-item>
+      <ion-item>
+				<div class="label">
+					<h3>Upto 80% success </h3>
+					<div class="text d-flex">
+						<p>Get upto 80% Cashback on first transactions</p>
+						<h4 text-center class="end">Know More</h4>
+					</div>
+					<h6><sup>*</sup>Terms and Condtions</h6>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-card>
+</ion-content>

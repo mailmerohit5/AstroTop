@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" style="color: #fff;"></ion-menu-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title style="color: #fff;">Call</ion-title>    
+    <ion-buttons slot="secondary">
+      <ion-chip color="dark" (click)='goToPage("addmoney")'>
+        <ion-icon name="wallet" style="color: #fff;"></ion-icon>
+        <ion-label style="color: #fff;">2200 Rs</ion-label>
+      </ion-chip>
+      <ion-icon name="notifications-sharp" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('notification')"></ion-icon>
+      <ion-icon name="ellipsis-vertical-outline" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('home')"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <H2 style="text-align:Center;" class="label1 label1Cls">Available Balance : &#8377; 2200 </H2>
+  <ion-searchbar placeholder="Search"></ion-searchbar>
+  <ion-segment class="segment3ClsItem">
+      <ion-segment-button checked class="segment3Clslabel">All</ion-segment-button>
+      <ion-segment-button class="segment3Clslabel">Verified</ion-segment-button>
+  </ion-segment>
+  <ion-list class="list-multiLabel">
+      <ion-item-sliding *ngFor="let item of list4">
+          <ion-item>
+              <ion-avatar slot="start"> <img src="{{item.ImageSrc}}"></ion-avatar>
+              <ion-label>
+                  <h2 *ngIf="item.TopLeftLabel !='' ">{{item.TopLeftLabel}}</h2>
+                  <p *ngIf="item.BottomLeftLabel !='' ">{{item.BottomLeftLabel}}</p>
+                  <ion-note class="note note-top" *ngIf="item.TopRightLabel !='' ">{{item.TopRightLabel}}
+                  </ion-note>
+                  <ion-note class="note note-middle" *ngIf="item.MidRightLabel !='' ">{{item.MidRightLabel}}
+                  </ion-note>
+                  <ion-note class="note note-bottom" *ngIf="item.BottomRightLabel !='' ">{{item.BottomRightLabel}}
+                  </ion-note>
+              </ion-label>
+          </ion-item>
+      </ion-item-sliding>
+  </ion-list>
+</ion-content>

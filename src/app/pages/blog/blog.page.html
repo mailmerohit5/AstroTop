@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" style="color: #fff;"></ion-menu-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title style="color: #fff;">Blog</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-chip color="dark" (click)='goToPage("addmoney")'>
+        <ion-icon name="wallet" style="color: #fff;"></ion-icon>
+        <ion-label style="color: #fff;">2200 Rs</ion-label>
+      </ion-chip>
+      <ion-icon name="notifications-sharp" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('notification')"></ion-icon>
+      <ion-icon name="ellipsis-vertical-outline" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('home')"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="BlogContentCls" [fullscreen]="true">
+  <form>
+      <ion-card *ngFor="let post of postArray" (click)="details(post.id)">
+          <img [src]="post.media_url">
+          <ion-card-content class="wordpresscard1Cls">
+              <div class="titleFont1" [innerHTML]="post.title.rendered"></div>
+              <p class="descriptionFont1" [innerHTML]="checkDescription(post.excerpt.rendered)"></p>
+          </ion-card-content>
+          <ion-row>
+              <ion-col style="padding: 5px 10px 10px 10px;opacity: 0.8;">
+                  <ion-note class="dateFont1">{{ post.date_gmt | date }}</ion-note> | <ion-note class="authorFont1">
+                      {{post.authorname}}</ion-note>
+              </ion-col>
+          </ion-row>
+
+      </ion-card>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+
+          <ion-infinite-scroll-content loadingText="Loading more posts...">
+
+          </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  </form>
+</ion-content>

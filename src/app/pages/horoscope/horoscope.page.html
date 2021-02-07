@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" style="color: #fff;"></ion-menu-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title style="color: #fff;">Horoscope</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-chip color="dark" (click)='goToPage("addmoney")'>
+        <ion-icon name="wallet" style="color: #fff;"></ion-icon>
+        <ion-label style="color: #fff;">2200 Rs</ion-label>
+      </ion-chip>
+      <ion-icon name="notifications-sharp" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('notification')"></ion-icon>
+      <ion-icon name="ellipsis-vertical-outline" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('home')"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="card_bg center_img">
+      <img src="assets/images/bg-orange.jpg" class="crop_img">
+    </div>
+    <h2 style="color: #fff;">Horoscope</h2>
+    <div class="scroll_container">
+      <ion-item *ngFor="let zodiac of zodiacs" (click)="goToPage('horoscope')">
+        <div class="label" style="background: none;">
+          <img [src]="'assets/images/'+ zodiac.title + '.svg'" height="60px" width="60px"  />
+          <h3  class="ion-text-capitalize">{{zodiac.title}}</h3>      
+        </div>
+      </ion-item>   
+    </div>
+   </ion-card>
+  <ion-card>
+    <ion-card-header>     
+      <ion-card-title>Luck</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>     
+      <ion-card-title>Numbers</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+     5,7,11
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>     
+      <ion-card-title>Relation</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>     
+      <ion-card-title>Health</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>     
+      <ion-card-title>Profession</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

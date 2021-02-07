@@ -1,5 +1,7 @@
 {
   "name": "AstroTop",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

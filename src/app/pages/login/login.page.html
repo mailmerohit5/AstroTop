@@ -1,0 +1,44 @@
+<ion-content padding="true" style="--background:#fff url(assets/images/bg-login.jpg) no-repeat center center / cover;">
+    <div style="height: 100px;"></div>
+    <ion-row>
+        <ion-col class="ion-text-center">
+            <img src="assets/images/logoH.svg" alt=""  height="150px"/>      
+        </ion-col>
+    </ion-row>
+    <div style="margin-top:10px;padding:12px;">        
+        <form [formGroup]="LoginForm">
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input formControlName="input1" type="email"></ion-input>
+            </ion-item>
+            <p *ngIf="LoginForm.controls.input1.errors && LoginForm.controls.input1.dirty" class="text-danger">Please
+                enter
+                Email.</p>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input formControlName="input2" type="password"></ion-input>
+            </ion-item>
+            <p *ngIf="LoginForm.controls.input2.errors && LoginForm.controls.input2.dirty" class="text-danger">Please
+                enter
+                Password.</p>
+            <ion-item style="--background:rgba(0,0,0,0);">
+                <ion-button slot="end" fill="clear" color="dark" (click)="navToHome()" >Sign Up</ion-button>
+            </ion-item>
+            <div style="width:100%" class="ion-text-left">
+                <ion-button expand="block" color="success" type="submit" expand="block" size="default" (click)="Login(LoginForm.value)">
+                    Login</ion-button>
+            </div>
+        </form>
+        <ion-row>
+            <ion-col class="ion-text-center">
+                <ion-label color="dark">OR</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-button expand="full" color="danger" (click)="loginWithGoogle()">
+            <ion-icon name="logo-google"></ion-icon>&nbsp; Login With Google
+        </ion-button><br />
+        <ion-button expand="full" class="fbBtn" color="secondary" (click)="loginWithFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon> &nbsp; Login With Facebook
+        </ion-button>
+    </div>
+</ion-content>

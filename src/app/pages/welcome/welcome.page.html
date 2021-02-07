@@ -1,0 +1,33 @@
+<ion-content style="--background:#fff url(assets/images/bg-welcome.jpg) no-repeat center center / cover;" >
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <P>&nbsp;</P>
+      <img src="assets/images/logo-light.svg" alt="" />      
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/images/sp1.svg" alt="" />
+      <h3>Welcome</h3>
+      <p>We made solutions of your worry</p>
+    </ion-slide>
+     <ion-slide>
+      <ion-text color="secondary">
+        <img src="assets/images/sp2.svg" alt="" />
+        <h3>Talk Right Away</h3>
+        <p>Now don't bother about your future , talk us right now!</p>
+      </ion-text>
+    </ion-slide>
+    <ion-slide>
+      <ion-text color="secondary">
+        <img src="assets/images/sp3.svg" alt="" />
+        <h3>Vastu , Numerology , Horoscope</h3>
+        <p>Each n evrything is now on your fingertips..</p>
+      </ion-text>
+    </ion-slide>
+    </ion-slides>
+    
+      <div class="center">
+        <button id="login-button1" class="btn-start"  (click)="navToLogin()"> 
+          <ion-icon name="send" style="font-size: 20px;"></ion-icon>&nbsp;Let's Start
+        </button>
+      </div>
+</ion-content>

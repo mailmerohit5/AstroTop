@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" style="color: #fff;"></ion-menu-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title style="color: #fff;">Blog</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-chip color="dark" (click)='goToPage("addmoney")'>
+        <ion-icon name="wallet" style="color: #fff;"></ion-icon>
+        <ion-label style="color: #fff;">2200 Rs</ion-label>
+      </ion-chip>
+      <ion-icon name="notifications-sharp" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('notification')"></ion-icon>
+      <ion-icon name="ellipsis-vertical-outline" style="font-size: 1.5em;padding-right: 10px;color: #fff;" (click)="goToPage('home')"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class=wordpresscard1Cls *ngIf="post">
+    <img [src]="post.media_url" [style.width]="'100%'">
+    <div class="titleFont1 padding-12" [innerHTML]="post.title.rendered"></div>
+    <ion-row>
+    <ion-col class="author-date">
+    <ion-note class="dateFont1">{{ post.date_gmt | date }}</ion-note> | 
+    <ion-note class="authorFont1">{{post.authorname}}</ion-note> </ion-col>
+    </ion-row>
+    <div [innerHTML]="checkDescription(post.content.rendered)" class="descriptionFont1 padding-0-12" >
+    </div>
+    </div>
+   
+</ion-content>
